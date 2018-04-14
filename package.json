@@ -1,0 +1,33 @@
+{
+  "name": "vue-in-browser",
+  "version": "1.0.0",
+  "description": "Compile Vue single-file components in browser on the fly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MingruiZhang/vue-in-browser.git"
+  },
+  "keywords": [
+    "browserify",
+    "vue",
+    "single-file",
+    "components"
+  ],
+  "author": "Mingrui Zhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MingruiZhang/vue-in-browser/issues"
+  },
+  "homepage": "https://github.com/MingruiZhang/vue-in-browser#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "babelify": "^8.0.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-vue": "^4.4.0",
+    "vue-template-compiler": "^2.5.16"
+  }
+}
