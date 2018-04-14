@@ -1,9 +1,10 @@
 {
   "name": "vue-in-browser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Compile Vue single-file components in browser on the fly",
   "main": "index.js",
   "scripts": {
+    "build": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,8 +27,11 @@
     "babel-core": "^6.26.0",
     "babel-preset-stage-2": "^6.24.1",
     "babelify": "^8.0.0",
+    "browserify": "^16.2.0",
     "eslint": "^4.19.1",
     "eslint-plugin-vue": "^4.4.0",
+    "fs": "^0.0.1-security",
+    "uglify-js": "^3.3.21",
     "vue-template-compiler": "^2.5.16"
   }
 }
