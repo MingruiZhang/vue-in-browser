@@ -32,6 +32,7 @@
     "eslint-plugin-vue": "^4.4.0",
     "fs": "^0.0.1-security",
     "uglify-js": "^3.3.21",
+    "uglifyify": "^4.0.5",
     "vue-template-compiler": "^2.5.16"
   }
 }
