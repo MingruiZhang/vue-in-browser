@@ -1,11 +1,12 @@
 {
   "name": "vue-in-browser",
-  "version": "1.0.2",
+  "version": "1.2.1",
   "description": "Compile Vue single-file components in browser on the fly",
   "main": "index.js",
   "scripts": {
     "build": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:publish": "node index.js && npm publish",
+    "test": "jest test/test.js"
   },
   "repository": {
     "type": "git",
@@ -14,8 +15,7 @@
   "keywords": [
     "browserify",
     "vue",
-    "single-file",
-    "components"
+    "single-file-components"
   ],
   "author": "Mingrui Zhang",
   "license": "MIT",
@@ -25,14 +25,21 @@
   "homepage": "https://github.com/MingruiZhang/vue-in-browser#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.3",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-stage-2": "^6.24.1",
     "babelify": "^8.0.0",
     "browserify": "^16.2.0",
     "eslint": "^4.19.1",
     "eslint-plugin-vue": "^4.4.0",
     "fs": "^0.0.1-security",
-    "uglify-js": "^3.3.21",
+    "jest": "^22.4.3",
+    "regenerator-runtime": "^0.11.1",
     "uglifyify": "^4.0.5",
+    "vue": "^2.5.16",
     "vue-template-compiler": "^2.5.16"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0-beta.44"
   }
 }
