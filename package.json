@@ -1,6 +1,6 @@
 {
   "name": "vue-in-browser",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Compile Vue single-file components in browser on the fly",
   "main": "index.js",
   "scripts": {

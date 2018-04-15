@@ -24,7 +24,7 @@ describe('vue in browser', () => {
     Compiler(path.resolve(__dirname, './fixtures/1-basic/basic.vue')).then(vueOptions => {
       expect(vueOptions.data()).toEqual({ msg: 'Hello world!' });
       assertRender(vueOptions, '<div class="example">{{ msg }}</div>');
-      expect(insertCSSFunc.mock.calls[0]).toEqual(['.example {\n  color: red;\n}']);
+      expect(insertCSSFunc.mock.calls[0][0]).toContain('.example {\n  color: red;\n}');
       done();
     });
   });
@@ -38,7 +38,16 @@ describe('vue in browser', () => {
         vueOptions,
         '<ul class="blue">\n  <li v-for="item in items" :key="item.id">\n\t\t{{ item.name }}\n\t</li>\n</ul>'
       );
-      expect(insertCSSFunc.mock.calls[1]).toEqual(['.pink {\n  color: pink;\n}']);
+      expect(insertCSSFunc.mock.calls[1][0]).toEqual('.pink {\n  color: pink;\n}');
+      done();
+    });
+  });
+
+  test('correctly render .vue component with multiple css', done => {
+    Compiler(path.resolve(__dirname, './fixtures/3-multiple-css/multiple-css.vue')).then(() => {
+      expect(insertCSSFunc.mock.calls[2][0]).toContain('.example {\n  color: red;\n}');
+      expect(insertCSSFunc.mock.calls[2][0]).toContain('.margin {\n  margin-top: 10px;\n}');
+      expect(insertCSSFunc.mock.calls[2][0]).toContain('.hello {\n  opacity:0;\n}');
       done();
     });
   });

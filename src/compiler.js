@@ -20,7 +20,7 @@ const fetchRawContentPromise = (part, fileDir) => {
  */
 const scriptToFunction = raw => {
   // The hack is to change export statement to 'return' and call function constructor.
-  return Function(raw.replace('export default', 'return').replace('exports.default =', 'return'));
+  return Function(raw.replace('export default', 'return').replace('module.exports =', 'return'));
 }
 /**
  * Core compile function
@@ -43,7 +43,7 @@ export default filePath => {
     return Promise.all([compiledTemplatePromise, compiledScriptPromise, ...compiledCSSPromiseArray]).then(
       ([processedTemplate, processedScript, ...processedCSSArray]) => {
         // CSS are inserted straight into HTML <head>
-        insertCSSToDOM(processedCSSArray.join('\n').trim());
+        insertCSSToDOM(processedCSSArray.join('\n'));
         // returned vue option contains data / render / staticRenderFns field
         return { ...processedTemplate, ...processedScript() };
       }
