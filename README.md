@@ -31,6 +31,7 @@ Basic `template` / `style`/ `script` code blocks:
 
 ```html
 // app.vue
+
 <style>
   .red {
     color: #f00;
@@ -56,6 +57,7 @@ You can import using the `src` attribute:
 
 ```html
 // app-with-import.vue
+
 <style src="./path/to/your/style.css"></style>
 
 <template src="./path/to/your/template.html"></template>
@@ -69,27 +71,36 @@ Javascript support will be based on your browser, so you can write ES2015 if you
 
 ```html
 // app-container.vue
+
 <template>
   <div class="container">
     <div id="module-1"></div>
     <div id="module-2"></div>
   </div>
 </template>
+
 <style>{...}</style>
+
 <script>{...}</script>
 
 // app-module-1.vue
 <template>{...}</template>
+
 <style>{...}</style>
+
 <script>{...}</script>
 
 // app-module-2.vue
 <template>{...}</template>
+
 <style>{...}</style>
+
 <script>{...}</script>
 
 // html
+
 <div id="app"></div>
+
 <script>
   loadVueComponent('./path/to/your/app-container.vue', '#app').then(() => {
     // Chain the function calls so the container component is rendered before subsequent load applies.
