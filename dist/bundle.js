@@ -13726,10 +13726,7 @@ var vueCompiler = require('vue-template-compiler'); // For some reason the vue-t
  * @return {Promise.<string, error>} - Raw content string from either block's src import or code content
  */
 var fetchRawContentPromise = function fetchRawContentPromise(part, fileDir) {
-  if (!part) {
-    // eslint-disable-next-line no-console
-    console.error('You should have <template>, <script> and <style> blocks in your .vue file');
-  }
+  if (!part) return Promise.resolve(''); // (?)
   // If the code block have src defined, priorities use that
   return part.src ? (0, _fileReader2.default)(_path2.default.resolve(fileDir, part.src)) : Promise.resolve(part.content);
 };

@@ -5,7 +5,7 @@
 ### Download
 
 ```
-https://unpkg.com/vue-in-browser@1.2.1/dist/bundle.min.js
+https://unpkg.com/vue-in-browser@1.2.2/dist/bundle.min.js
 ```
 
 ## Why?
@@ -21,7 +21,7 @@ Just include the script on the page and create another inline script to call `lo
 ```html
 <div id="app"></div>
 
-<script src="https://unpkg.com/vue-in-browser@1.2.1/dist/bundle.min.js"></script>
+<script src="https://unpkg.com/vue-in-browser@1.2.2/dist/bundle.min.js"></script>
 <script> loadVueComponent('./path/to/your/app.vue', '#app') </script>
 ```
 
@@ -31,7 +31,6 @@ Basic `template` / `style`/ `script` code blocks:
 
 ```html
 // app.vue
-
 <style>
   .red {
     color: #f00;
@@ -57,7 +56,6 @@ You can import using the `src` attribute:
 
 ```html
 // app-with-import.vue
-
 <style src="./path/to/your/style.css"></style>
 
 <template src="./path/to/your/template.html"></template>
@@ -67,11 +65,10 @@ You can import using the `src` attribute:
 
 Javascript support will be based on your browser, so you can write ES2015 if your browser supports, use libraries like [@babel/standalone](https://github.com/babel/babel/tree/master/packages/babel-standalone) if necessary.
 
-**NOTE:** importing other `*.vue` componenet from script doesn't work. However you can call multiple `loadVueComponent()` to achieve it.
+**NOTE:** importing other components from script doesn't work. However you can call multiple `loadVueComponent()` to achieve it.
 
 ```html
-// app-container.vue
-
+// container.vue
 <template>
   <div class="container">
     <div id="module-1"></div>
@@ -79,36 +76,24 @@ Javascript support will be based on your browser, so you can write ES2015 if you
   </div>
 </template>
 
-<style>{...}</style>
+// module-1.vue
+...
 
-<script>{...}</script>
-
-// app-module-1.vue
-<template>{...}</template>
-
-<style>{...}</style>
-
-<script>{...}</script>
-
-// app-module-2.vue
-<template>{...}</template>
-
-<style>{...}</style>
-
-<script>{...}</script>
+// module-2.vue
+...
 
 // html
-
 <div id="app"></div>
 
 <script>
-  loadVueComponent('./path/to/your/app-container.vue', '#app').then(() => {
+  loadVueComponent('./container.vue', '#app').then(() => {
     // Chain the function calls so the container component is rendered before subsequent load applies.
-    loadVueComponent('./path/to/your/app-module-1.vue', '#module-1');
-    loadVueComponent('./path/to/your/app-module-2.vue', '#module-2');
+    loadVueComponent('./module-1.vue', '#module-1');
+    loadVueComponent('./module-2.vue', '#module-2');
   })
 </script>
 ```
+
 Scoped CSS, CSS module, mix preprocessor languages not supported yet.
 
 ## License
