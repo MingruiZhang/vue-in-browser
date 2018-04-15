@@ -5,7 +5,7 @@
 ### Download
 
 ```
-https://unpkg.com/vue-in-browser@1.2.4/dist/bundle.min.js
+https://unpkg.com/vue-in-browser@1.2.5/dist/bundle.min.js
 ```
 
 ## Why?
@@ -16,12 +16,14 @@ Provide way to _quick prototyping_ with vue component. No need to install any de
 
 ## Usage
 
-Just include the script on the page and create another inline script to call `loadVueComponent(filePath, element)`, with `filePath` being path (relative or absolute) to your `*.vue` file and `element` indicating the DOM element selector you want to render the vue component on.
+Just include the script on the page and create another inline script to call **`loadVueComponent(filePath, selector)`**.
+- `filePath` is the path (relative or absolute) to your `*.vue` file
+- `selector` is the DOM element selector you want to render the vue component on.
 
 ```html
 <div id="app"></div>
 
-<script src="https://unpkg.com/vue-in-browser@1.2.4/dist/bundle.min.js"></script>
+<script src="https://unpkg.com/vue-in-browser@1.2.5/dist/bundle.min.js"></script>
 <script> loadVueComponent('./path/to/your/app.vue', '#app') </script>
 ```
 
