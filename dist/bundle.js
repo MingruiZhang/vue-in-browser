@@ -13737,7 +13737,7 @@ var fetchRawContentPromise = function fetchRawContentPromise(part, fileDir) {
  */
 var scriptToFunction = function scriptToFunction(raw) {
   // The hack is to change export statement to 'return' and call function constructor.
-  return Function(raw.replace('export default', 'return').replace('exports.default =', 'return'));
+  return Function(raw.replace('export default', 'return').replace('module.exports =', 'return'));
 };
 /**
  * Core compile function
@@ -13767,7 +13767,7 @@ exports.default = function (filePath) {
           processedCSSArray = _ref2.slice(2);
 
       // CSS are inserted straight into HTML <head>
-      (0, _insertCSS2.default)(processedCSSArray.join('\n').trim());
+      (0, _insertCSS2.default)(processedCSSArray.join('\n'));
       // returned vue option contains data / render / staticRenderFns field
       return _extends({}, processedTemplate, processedScript());
     });

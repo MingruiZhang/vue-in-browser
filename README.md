@@ -5,7 +5,7 @@
 ### Download
 
 ```
-https://unpkg.com/vue-in-browser@1.2.3/dist/bundle.min.js
+https://unpkg.com/vue-in-browser@1.2.4/dist/bundle.min.js
 ```
 
 ## Why?
@@ -21,7 +21,7 @@ Just include the script on the page and create another inline script to call `lo
 ```html
 <div id="app"></div>
 
-<script src="https://unpkg.com/vue-in-browser@1.2.3/dist/bundle.min.js"></script>
+<script src="https://unpkg.com/vue-in-browser@1.2.4/dist/bundle.min.js"></script>
 <script> loadVueComponent('./path/to/your/app.vue', '#app') </script>
 ```
 
